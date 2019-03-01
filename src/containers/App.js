@@ -4,13 +4,22 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import Persons from '../components/Persons/Persons';
 
 class App extends Component {
-    state = {
-        persons: [
-            {name: 'Conrad Dsouza', age: 40},
-            {name: 'Norma Mendonca', age: 36},
-            {name: 'Cheryl Dsouza', age: 10},
-        ],
-        showPersons: false
+    constructor(props) {
+        super(props);
+        console.log('[App.js] | constructor');
+        this.state = {
+            persons: [
+                {name: 'Conrad Dsouza', age: 40},
+                {name: 'Norma Mendonca', age: 36},
+                {name: 'Cheryl Dsouza', age: 10},
+            ],
+            showPersons: false
+        }
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        console.log('[App.js] | getDerivedStateFromProps', props, state);
+        return state;
     }
 
     nameChangedHandler = (event, index) => {
@@ -39,6 +48,8 @@ class App extends Component {
     }
 
     render() {
+        console.log('[App.js] | render');
+
         const style = {
             backgroundColor: 'white',
             font: 'inherit',
@@ -65,6 +76,10 @@ class App extends Component {
             </div>
         );
         // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
+    }
+
+    componentDidMount() {
+        console.log('[App.js] | componentDidMount');
     }
 }
 
