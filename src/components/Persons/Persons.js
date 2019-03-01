@@ -1,21 +1,44 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import Person from "./Person/Person";
 
-const persons = (props) => {
-    console.log('[Persons.js] rendering...');
+class Persons extends Component {
+    state = {}
 
-    let persons = props.persons.map((person, index) => {
-        return <ErrorBoundary key={index}>
-            <Person
-                name={person.name}
-                age={person.age}
-                click={() => props.clicked(index)}
-                changed={(event) => props.changed(event, index)} />
-        </ErrorBoundary>
-    });
+    static getDerivedStateFromProps(props, state) {
+        console.log('[Persons.js] | getDerivedStateFromProps', props, state);
+        return state;
+    }
 
-    return persons;
-};
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('[Persons.js] | shouldComponentUpdate', nextProps, nextState);
+        return true;
+    }
 
-export default persons;
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('[Persons.js] | getSnapshotBeforeUpdate', prevProps, prevState);
+        return {message: 'Persons.js snapshot'};
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('[Persons.js] | componentDidUpdate', prevProps, prevState, snapshot);
+    }
+
+    render() {
+        console.log('[Persons.js] rendering...');
+
+        let persons = this.props.persons.map((person, index) => {
+            return <ErrorBoundary key={index}>
+                <Person
+                    name={person.name}
+                    age={person.age}
+                    click={() => this.props.clicked(index)}
+                    changed={(event) => this.props.changed(event, index)}/>
+            </ErrorBoundary>
+        });
+
+        return persons;
+    }
+}
+
+export default Persons;

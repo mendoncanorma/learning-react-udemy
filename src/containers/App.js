@@ -81,6 +81,20 @@ class App extends Component {
     componentDidMount() {
         console.log('[App.js] | componentDidMount');
     }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('[App.js] | shouldComponentUpdate', nextProps, nextState);
+        return true;
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('[Persons.js] | getSnapshotBeforeUpdate', prevProps, prevState);
+        return {message: 'App.js snapshot'};
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('[App.js] | componentDidUpdate', prevProps, prevState, snapshot);
+    }
 }
 
 export default App;
