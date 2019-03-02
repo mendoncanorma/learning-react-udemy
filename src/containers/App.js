@@ -48,6 +48,11 @@ class App extends Component {
         this.setState({showPersons: !showPersons});
     }
 
+    toggleCockpitDisplay = () => {
+        var showCockpit = this.state.showCockpit;
+        this.setState({showCockpit: !showCockpit})
+    }
+
     render() {
         console.log('[App.js] | render');
 
@@ -69,7 +74,7 @@ class App extends Component {
 
         return (
             <div className={classes.App}>
-                <button onClick={() => {this.setState({showCockpit: false})}}>Remove Cockpit</button>
+                <button onClick={this.toggleCockpitDisplay}>Remove Cockpit</button>
                 {this.state.showCockpit ?
                     <Cockpit
                         clicked={this.togglePersonsHandler}
