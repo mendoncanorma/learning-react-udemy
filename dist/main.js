@@ -361,7 +361,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../../node_modules/css-load
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Person_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Person.css */ \"./src/components/Persons/Person/Person.css\");\n/* harmony import */ var _Person_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Person_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _hoc_Auxiliary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hoc/Auxiliary */ \"./src/hoc/Auxiliary.js\");\n\n\n\n\nvar person = function person(props) {\n  console.log('[Person.js] rendering...');\n  var rnd = Math.random();\n\n  if (rnd > 1) {\n    throw new Error('Something went wrong');\n  }\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {\n    className: _Person_css__WEBPACK_IMPORTED_MODULE_1___default.a.Person\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", {\n    onClick: props.click\n  }, \"I'm \", props.name, \" and I am \", props.age, \" years old!\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    onChange: props.changed,\n    value: props.name\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (person);\n\n//# sourceURL=webpack:///./src/components/Persons/Person/Person.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Person_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Person.css */ \"./src/components/Persons/Person/Person.css\");\n/* harmony import */ var _Person_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Person_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _hoc_Auxiliary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hoc/Auxiliary */ \"./src/hoc/Auxiliary.js\");\n/* harmony import */ var _hoc_WithClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../hoc/WithClass */ \"./src/hoc/WithClass.js\");\n\n\n\n\n\nvar person = function person(props) {\n  console.log('[Person.js] rendering...');\n  var rnd = Math.random();\n\n  if (rnd > 1) {\n    throw new Error('Something went wrong');\n  }\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_hoc_WithClass__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n    classes: _Person_css__WEBPACK_IMPORTED_MODULE_1___default.a.Person\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", {\n    onClick: props.click\n  }, \"I'm \", props.name, \" and I am \", props.age, \" years old!\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, props.children), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    onChange: props.changed,\n    value: props.name\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (person);\n\n//# sourceURL=webpack:///./src/components/Persons/Person/Person.js?");
 
 /***/ }),
 
@@ -409,6 +409,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar auxiliary = function auxiliary(props) {\n  return props.children;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (auxiliary);\n\n//# sourceURL=webpack:///./src/hoc/Auxiliary.js?");
+
+/***/ }),
+
+/***/ "./src/hoc/WithClass.js":
+/*!******************************!*\
+  !*** ./src/hoc/WithClass.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar WithClass = function WithClass(props) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: props.classes\n  }, props.children);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (WithClass);\n\n//# sourceURL=webpack:///./src/hoc/WithClass.js?");
 
 /***/ }),
 
